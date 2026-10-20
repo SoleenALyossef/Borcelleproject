@@ -1,0 +1,213 @@
+/* HeroSection.css */
+
+.hero-wrapper {
+  display: flex;
+  gap: 15px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 2rem;
+  min-height: 400px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* ---------------- Sidebar ---------------- */
+.hero-sidebar {
+  flex: 0 0 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-item {
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-bottom: 2px;
+}
+
+.category-item:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+}
+
+.category-item.active {
+  background-color: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* ---------------- Main Banner ---------------- */
+.hero-main-banner {
+  flex: 1;
+  background-color: #a0e0d1;
+  background-image: url('src/assets/image/Banner-board-800x420 2.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.banner-subtitle {
+  font-size: 1.5rem;
+  color: #1c1c1c;
+  margin-bottom: 0.2rem;
+}
+
+.banner-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin-bottom: 1.5rem;
+}
+
+.btn-learn-more {
+  background-color: #ffffff;
+  color: #1c1c1c;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.btn-learn-more:hover {
+  transform: translateY(-2px);
+  background-color: #f8f9fa;
+}
+
+/* ---------------- Right Panels ---------------- */
+.hero-right-panels {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-panel {
+  background-color: var(--primary-soft);
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.user-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+}
+
+.user-greeting {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.btn-join,
+.btn-login {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.btn-join {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-join:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-login {
+  background-color: var(--bg-card);
+  color: var(--primary);
+  margin-bottom: 0;
+}
+
+.btn-login:hover {
+  background-color: var(--bg-secondary);
+}
+
+.promo-panel {
+  border-radius: 6px;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  height: 100%;
+}
+
+.promo-orange {
+  background-color: #f38332;
+}
+
+.promo-pink {
+  background-color: #ef5f7a;
+}
+
+@media (max-width: 992px) {
+  .hero-wrapper {
+    flex-direction: column;
+  }
+  .hero-sidebar {
+    flex: auto;
+  }
+  .hero-category-list {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+  .category-item {
+    margin-bottom: 0;
+  }
+  .hero-main-banner {
+    min-height: 250px;
+  }
+  .hero-right-panels {
+    flex-direction: row;
+    flex: auto;
+  }
+  .user-panel,
+  .promo-panel {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-right-panels {
+    flex-direction: column;
+  }
+}

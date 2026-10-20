@@ -1,0 +1,796 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Light Mode - ألوان هادئة */
+  --bg-main: #f7fafc;
+  --bg-card: #ffffff;
+  --bg-secondary: #f1f3f5;
+  --bg-input: #ffffff;
+
+  --text-main: #1f2933;
+  --text-muted: #6b7280;
+  --text-inverse: #ffffff;
+
+  --border-color: #e5e9ee;
+  --border-soft: #f1f1f1;
+
+  --primary: #e94f6d;
+  --primary-hover: #d43d5b;
+  --primary-soft: #fde8ec;
+
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  --transition: 0.25s ease;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode - هادئ ومريح للعين */
+  --bg-main: #14171c;
+  --bg-card: #1c2027;
+  --bg-secondary: #232830;
+  --bg-input: #232830;
+
+  --text-main: #e6e9ee;
+  --text-muted: #9aa3af;
+  --text-inverse: #14171c;
+
+  --border-color: #2c313a;
+  --border-soft: #232830;
+
+  --primary: #ff5c7a;
+  --primary-hover: #ff7a92;
+  --primary-soft: #3a1f29;
+
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================================================================
+   GLOBAL RESET
+   ================================================================== */
+* {
+  transition: background-color var(--transition),
+              color var(--transition),
+              border-color var(--transition);
+}
+/* ============ Force Full Dark Background ============ */
+html,
+body,
+#root,
+#root > div,
+#root > div > div,
+.app,
+.App {
+  background-color: var(--bg-main) !important;
+  min-height: 10vh;
+  color: var(--text-main);
+}
+
+/* كل الصفحات داخل الراوتر */
+[data-theme="dark"] .page-wrapper,
+[data-theme="dark"] main,
+[data-theme="dark"] > div {
+  background-color: var(--bg-main) !important;
+}
+html, body, #root {
+  background-color: var(--bg-main) !important;
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ==================================================================
+   SCROLLBAR
+   ================================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ==================================================================
+   WRAPPERS
+   ================================================================== */
+[data-theme="dark"] body,
+[data-theme="dark"] #root,
+[data-theme="dark"] main,
+[data-theme="dark"] .container,
+[data-theme="dark"] .container-fluid {
+ 
+  color: var(--text-main);
+}
+
+[data-theme="dark"] section {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* ==================================================================
+   CARDS
+   ================================================================== */
+[data-theme="dark"] .card,
+[data-theme="dark"] .card-body,
+[data-theme="dark"] .card-header,
+[data-theme="dark"] .card-footer {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main);
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: var(--bg-card) !important;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* ==================================================================
+   TYPOGRAPHY
+   ================================================================== */
+[data-theme="dark"] .text-dark,
+[data-theme="dark"] .text-black {
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .text-secondary {
+  color: var(--text-muted) !important;
+}
+
+/* ==================================================================
+   BORDERS
+   ================================================================== */
+[data-theme="dark"] .border,
+[data-theme="dark"] .border-top,
+[data-theme="dark"] .border-bottom,
+[data-theme="dark"] .border-start,
+[data-theme="dark"] .border-end {
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] hr {
+  border-color: var(--border-color);
+}
+
+/* ==================================================================
+   FORM CONTROLS
+   ================================================================== */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .input-group-text,
+[data-theme="dark"] input.form-control,
+[data-theme="dark"] select.form-select,
+[data-theme="dark"] textarea.form-control {
+  background-color: var(--bg-input) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .form-control::placeholder,
+[data-theme="dark"] input.form-control::placeholder,
+[data-theme="dark"] textarea.form-control::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] input.form-control:focus,
+[data-theme="dark"] select.form-select:focus,
+[data-theme="dark"] textarea.form-control:focus {
+  background-color: var(--bg-input) !important;
+  color: var(--text-main) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(233, 79, 109, 0.25) !important;
+}
+
+[data-theme="dark"] .input-group .form-control {
+  background-color: var(--bg-input) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* ==================================================================
+   BUTTONS
+   ================================================================== */
+[data-theme="dark"] .btn-light {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .btn-light:hover {
+  background-color: var(--bg-card) !important;
+}
+
+[data-theme="dark"] .btn-outline-secondary {
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .btn-outline-secondary:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .btn-close {
+  filter: invert(1) brightness(1.5);
+}
+
+/* ==================================================================
+   DROPDOWNS
+   ================================================================== */
+[data-theme="dark"] .dropdown-menu {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .dropdown-item {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+  background-color: var(--bg-secondary);
+  color: var(--primary);
+}
+
+/* ==================================================================
+   OFFCANVAS / MODAL
+   ================================================================== */
+[data-theme="dark"] .offcanvas {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .offcanvas-header {
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .modal-content {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+}
+
+/* ==================================================================
+   TABLE
+   ================================================================== */
+[data-theme="dark"] .table {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .table th,
+[data-theme="dark"] .table td {
+  border-color: var(--border-color);
+}
+
+/* ==================================================================
+   SUBSCRIBE / SECTIONS
+   ================================================================== */
+.subscribe-section,
+[class*="subscribe"] {
+  background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .subscribe-section,
+[data-theme="dark"] [class*="subscribe"] {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .subscribe-section h4,
+[data-theme="dark"] .subscribe-section h5,
+[data-theme="dark"] .subscribe-section h2 {
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .subscribe-section p {
+  color: var(--text-muted) !important;
+}
+
+/* ==================================================================
+   FOOTER
+   ================================================================== */
+[data-theme="dark"] footer {
+  background-color: #0e1014 !important;
+  color: var(--text-main) !important;
+  border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] footer a {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] footer a:hover {
+  color: var(--primary) !important;
+}
+
+/* ==================================================================
+   HEADER
+   ================================================================== */
+[data-theme="dark"] .main-header {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* ==================================================================
+   PAGINATION
+   ================================================================== */
+[data-theme="dark"] .page-link {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .page-link:hover {
+  background-color: var(--bg-secondary);
+  color: var(--primary);
+}
+
+[data-theme="dark"] .page-item.active .page-link {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* ==================================================================
+   BADGES
+   ================================================================== */
+[data-theme="dark"] .badge.bg-secondary-subtle {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .badge.bg-success-subtle {
+  background-color: rgba(52, 211, 153, 0.15) !important;
+  color: var(--success) !important;
+}
+
+[data-theme="dark"] .badge.bg-danger {
+  color: #fff;
+}
+/* ============ Mycart Cards ============ */
+[data-theme="dark"] .cart-layout .card,
+[data-theme="dark"] .cart-layout .card-body,
+[data-theme="dark"] .cart-layout > div > div,
+[data-theme="dark"] .cart-layout > div {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* ============ Checkout Summary ============ */
+[data-theme="dark"] .checkout-summary,
+[data-theme="dark"] .summary-card,
+[data-theme="dark"] aside,
+[data-theme="dark"] aside > div {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .checkout-summary *,
+[data-theme="dark"] .summary-card * {
+  color: inherit;
+}
+
+[data-theme="dark"] .checkout-summary .text-muted,
+[data-theme="dark"] .summary-card .text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* ============ Coupon Input ============ */
+[data-theme="dark"] .coupon-box,
+[data-theme="dark"] [class*="coupon"] {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] [class*="coupon"] input,
+[data-theme="dark"] [class*="coupon"] .form-control {
+  background-color: var(--bg-input) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* ============ Cart Items List ============ */
+[data-theme="dark"] .cart-items-list,
+[data-theme="dark"] [class*="cart-item"] {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] [class*="cart-item"] .text-muted,
+[data-theme="dark"] [class*="cart-item"] small {
+  color: var(--text-muted) !important;
+}
+/* ============ Mycart Page Extras ============ */
+[data-theme="dark"] .main-cart-wrapper {
+  background-color: var(--bg-main);
+}
+
+[data-theme="dark"] .cart-items-section,
+[data-theme="dark"] .coupon-card,
+[data-theme="dark"] .summary-card,
+[data-theme="dark"] .saved-section-card,
+[data-theme="dark"] .saved-product-card {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .cart-header-title {
+  color: var(--text-main) !important;
+}
+
+/* SVG Payment Icons في الوضع الليلي */
+[data-theme="dark"] .payment-icons svg {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* ============ Auth Pages ============ */
+[data-theme="dark"] .auth-right-pane {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .form-title {
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .form-subtitle {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .text-dark {
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .custom-input,
+[data-theme="dark"] .custom-input-field,
+[data-theme="dark"] .otp-input {
+  background-color: var(--bg-input) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .custom-input-icon,
+[data-theme="dark"] .custom-input-icon-side {
+  background-color: var(--bg-input) !important;
+  color: var(--primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .profile-upload-box {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .profile-upload-box:hover {
+  background-color: var(--primary-soft) !important;
+  border-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .upload-text {
+  color: var(--text-muted) !important;
+}
+
+
+/* ==================================================================
+   RTL / LTR SUPPORT
+   ================================================================== */
+html[dir="rtl"] body {
+  font-family: 'Cairo', 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* عكس الاتجاهات في RTL */
+html[dir="rtl"] .me-1 { margin-right: 0 !important; margin-left: 0.25rem !important; }
+html[dir="rtl"] .me-2 { margin-right: 0 !important; margin-left: 0.5rem !important; }
+html[dir="rtl"] .me-3 { margin-right: 0 !important; margin-left: 1rem !important; }
+html[dir="rtl"] .me-4 { margin-right: 0 !important; margin-left: 1.5rem !important; }
+html[dir="rtl"] .ms-1 { margin-left: 0 !important; margin-right: 0.25rem !important; }
+html[dir="rtl"] .ms-2 { margin-left: 0 !important; margin-right: 0.5rem !important; }
+html[dir="rtl"] .ms-3 { margin-left: 0 !important; margin-right: 1rem !important; }
+html[dir="rtl"] .ms-4 { margin-left: 0 !important; margin-right: 1.5rem !important; }
+
+/* زر اللغة */
+.lang-toggle-btn {
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.25s ease;
+}
+
+.lang-toggle-btn:hover {
+  background-color: var(--primary-soft);
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+/* ==================================================================
+   CHECKOUT PAGE — Typography & Layout
+   ================================================================== */
+
+/* عناوين المنتجات في الملخص */
+.checkout-item-title {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: var(--text-main) !important;
+  line-height: 1.35;
+}
+
+/* الوصف */
+.checkout-item-desc {
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* صف الأسعار (Total / Discount / Tax) */
+.summary-line {
+  font-size: 1.05rem !important;
+  color: var(--text-main);
+}
+
+.summary-line span:first-child {
+  color: var(--text-muted);
+}
+
+/* الإجمالي النهائي */
+.summary-total-label {
+  font-size: 1.15rem !important;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.net-total-price {
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--primary) !important;
+}
+
+/* السعر داخل صف المنتج */
+.price-text {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: var(--primary) !important;
+  min-width: 100px;
+  text-align: right;
+}
+
+/* شارة الكمية */
+.item-qty-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  min-width: 32px;
+  height: 32px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0 8px;
+}
+
+/* صور المنتجات في الملخص */
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 4px;
+}
+
+/* عنوان القسم الأيسر */
+.payment-left-section h3 {
+  font-size: 1.5rem !important;
+}
+
+/* خيارات الدفع */
+.payment-option {
+  font-size: 1.05rem;
+  padding: 14px 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.payment-option:last-child {
+  border-bottom: none;
+}
+
+/* input الكوبون */
+.discount-input {
+  font-size: 1rem !important;
+  padding: 10px 14px !important;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] .checkout-item-title,
+[data-theme="dark"] .summary-line,
+[data-theme="dark"] .summary-total-label {
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .item-qty-badge {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .cart-item-img {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  animation: l26 1s infinite steps(12);
+}
+.loader,
+.loader:before,
+.loader:after {
+  background:
+    radial-gradient(closest-side at 50% 12.5%, #f03355 96%, #0000) 50% 0/20% 80% repeat-y,
+    radial-gradient(closest-side at 12.5% 50%, #f03355 96%, #0000) 0 50%/80% 20% repeat-x;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  transform: rotate(30deg);
+}
+.loader:after {
+  transform: rotate(60deg);
+}
+@keyframes l26 {
+  100% { transform: rotate(1turn) }
+}
+.theme-transition,
+.theme-transition * {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease !important;
+}
+
+/* Project-wide responsive safeguards (keeps the existing visual palette intact). */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { width: 100%; max-width: 100%; overflow-x: clip; }
+img, video, canvas, svg { max-width: 100%; }
+input, select, textarea, button { max-width: 100%; }
+.table-responsive, .admin-card { max-width: 100%; }
+.admin-card { overflow-x: auto; }
+.admin-table { min-width: 620px; }
+
+/* Arabic typography and right-to-left layout. */
+html[dir="rtl"], html[dir="rtl"] body, html[dir="rtl"] button,
+html[dir="rtl"] input, html[dir="rtl"] textarea, html[dir="rtl"] select {
+  font-family: 'Cairo', Tahoma, Arial, sans-serif;
+}
+html[dir="rtl"] .admin-table thead th { text-align: right; }
+html[dir="rtl"] .price-text { text-align: left; }
+html[dir="rtl"] .main-header .nav-icon-item { margin-left: 0; margin-right: 0.8rem; }
+html[dir="rtl"] .main-header .search-box-group .search-input { text-align: right; }
+html[dir="rtl"] .admin-sidebar { border-right: 0; border-left: 1px solid var(--border-color); }
+html[dir="rtl"] .admin-sidebar .admin-nav-item,
+html[dir="rtl"] .admin-logout,
+html[dir="rtl"] .admin-brand { text-align: right; }
+
+@media (max-width: 992px) {
+  .container, .container-fluid { max-width: 100%; }
+  .main-header { padding: 0.75rem 1rem !important; flex-wrap: wrap; gap: 0.75rem; }
+  .main-header > a { flex-shrink: 0; }
+  .main-header .search-box-group { order: 3; flex: 1 0 100%; max-width: 100%; }
+  .main-header > div:last-child { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem; width: 100%; }
+  .nav-icon-item { margin: 0.25rem 0.45rem !important; }
+  .sub-navbar { padding: 0.6rem 1rem; }
+  .admin-content { padding: 1rem; }
+  .admin-topbar { padding: 0.75rem 1rem; }
+}
+
+@media (max-width: 768px) {
+  .admin-header-row { align-items: stretch; }
+  .admin-header-row > * { max-width: 100%; }
+  .admin-header-row .admin-btn-primary { justify-content: center; }
+  .admin-page-title { font-size: 1.2rem; }
+  .admin-card { padding: 0.9rem; border-radius: 10px; }
+  .admin-table { font-size: 0.82rem; }
+  .admin-table thead th, .admin-table tbody td { padding: 8px; white-space: nowrap; }
+  .form-control, .form-select { min-width: 0; }
+  .profile-header { flex-wrap: wrap; gap: 0.75rem; }
+  .profile-header .flex-grow-1 { min-width: 150px; }
+  .cart-item-row { flex-wrap: wrap; }
+  .search-box-group .category-select { max-width: 115px; }
+}
+
+@media (max-width: 480px) {
+  .main-header { padding: 0.6rem !important; }
+  .main-header > a img { max-width: 130px; height: auto; }
+  .nav-icon-item { font-size: 0.65rem !important; margin: 0.2rem 0.3rem !important; }
+  .nav-icon-item svg { width: 18px; height: 18px; }
+  .main-header .search-box-group .category-select { display: none; }
+  .sub-navbar { padding: 0.55rem 0.75rem; }
+  .admin-content { padding: 0.65rem; }
+  .admin-topbar-right { gap: 6px; }
+  .admin-user { max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 5px 8px; }
+  .admin-icon-btn { width: 34px; height: 34px; }
+  .admin-btn-primary { padding: 8px 11px; font-size: 0.9rem; }
+  .verification-inputs { gap: 0 !important; }
+  .otp-input { max-width: 48px; }
+}
+
+/* Accessible, design-consistent category dropdown in the storefront navigation. */
+.sub-nav-category-toggle,
+.sub-nav-category-toggle:hover,
+.sub-nav-category-toggle:focus,
+.sub-nav-category-toggle:active {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit;
+  cursor: pointer;
+}
+
+.category-navigation-menu {
+  z-index: 1080;
+  max-height: min(60vh, 480px);
+  overflow-y: auto;
+  min-width: 220px;
+}
+
+.admin-loader {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto;
+  border: 3px solid rgba(241, 59, 99, 0.18);
+  border-top-color: #f13b63;
+  border-radius: 50%;
+  animation: profile-loader-rotate 0.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-loader { animation-duration: 2s; }
+}

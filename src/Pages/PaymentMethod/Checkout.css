@@ -1,0 +1,408 @@
+/* Checkout.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-main);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.25s ease;
+}
+
+/* ---------------- 1. Header ---------------- */
+.main-header {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.8rem 2rem;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.search-box-group {
+  max-width: 500px;
+  width: 100%;
+}
+
+.search-input {
+  border-color: var(--border-color) !important;
+  background-color: var(--bg-input) !important;
+  color: var(--text-main) !important;
+  font-size: 0.9rem !important;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.search-input:focus {
+  box-shadow: none !important;
+  border-color: #f13b63 !important;
+}
+
+.category-select {
+  border-color: var(--border-color) !important;
+  background-color: var(--bg-input) !important;
+  font-size: 0.85rem !important;
+  color: var(--text-main) !important;
+  max-width: 153px;
+}
+
+.btn-search {
+  background-color: #f13b63 !important;
+  border-color: #f13b63 !important;
+  color: #ffffff !important;
+  padding: 0 1.2rem !important;
+}
+
+.btn-search:hover {
+  background-color: #d12e51 !important;
+}
+
+/* Nav icons */
+.nav-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.75rem;
+  margin-left: 1.2rem;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.nav-icon-item:hover,
+.nav-icon-item.active-nav {
+  color: #f13b63 !important;
+}
+
+.nav-icon-item.active-nav {
+  font-weight: 600;
+}
+
+/* ============================================================
+   2. Payment Page Layout
+   ============================================================ */
+.payment-left-section {
+  background:
+    linear-gradient(rgba(40, 20, 20, 0.88), rgba(40, 20, 20, 0.92)),
+    url('../../assets/image/Rectangle(1).png') center/cover no-repeat;
+  color: #ffffff;
+  padding: 3rem 2.5rem;
+  min-height: calc(100vh - 70px);
+}
+
+/* فرض الأبيض على كل نصوص القسم الأيسر */
+.payment-left-section h1,
+.payment-left-section h2,
+.payment-left-section h3,
+.payment-left-section h4,
+.payment-left-section h5,
+.payment-left-section h6,
+.payment-left-section p,
+.payment-left-section label,
+.payment-left-section span,
+.payment-left-section div,
+.payment-left-section .form-label {
+  color: #ffffff !important;
+}
+
+.payment-left-section .text-white-50 {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.payment-right-section {
+  background-color: var(--bg-main);
+  padding: 3rem 2.5rem;
+  min-height: calc(100vh - 70px);
+  transition: background-color 0.25s ease;
+}
+
+/* Payment Options */
+.payment-option {
+  padding: 0.9rem 0.4rem;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color 0.2s ease, padding 0.2s ease;
+  border-radius: 8px;
+}
+
+.payment-option:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.payment-option:last-child {
+  border-bottom: none;
+}
+
+.payment-option img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #ffffff;
+  padding: 3px;
+}
+
+/* Radio */
+.custom-radio {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.custom-radio.active {
+  border-color: #f13b63;
+  background-color: #f13b63;
+}
+
+.custom-radio.active::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+/* Discount Code */
+.discount-input-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.discount-input {
+  border-radius: 8px !important;
+  border: none !important;
+  padding: 0.75rem !important;
+  background-color: #ffffff !important;
+  color: #1c1c1c !important;
+  font-size: 1rem !important;
+  font-weight: 500;
+}
+
+.discount-input:focus {
+  box-shadow: 0 0 0 3px rgba(241, 59, 99, 0.25) !important;
+}
+
+.btn-check-code {
+  background-color: #ffffff !important;
+  color: #f13b63 !important;
+  border: 1px solid #f13b63 !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 1.2rem !important;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.btn-check-code:hover {
+  background-color: #f13b63 !important;
+  color: #ffffff !important;
+}
+
+/* ============================================================
+   3. Right Section: Cart Items + Summary
+   ============================================================ */
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cart-item-row:last-child {
+  border-bottom: none;
+}
+
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 4px;
+}
+
+.item-qty-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.price-text {
+  color: #f13b63 !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem;
+  min-width: 100px;
+  text-align: right;
+}
+
+.net-total-price {
+  color: #f13b63 !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+}
+
+.summary-line {
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+
+.summary-line span:first-child {
+  color: var(--text-muted);
+}
+
+.summary-total-label {
+  font-size: 1.15rem !important;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.checkout-item-title {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: var(--text-main) !important;
+  line-height: 1.35;
+  margin-bottom: 0.35rem;
+}
+
+.checkout-item-desc {
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================================
+   4. Success Modal
+   ============================================================ */
+.success-modal .modal-content {
+  border-radius: 16px !important;
+  text-align: center;
+}
+
+/* ============================================================
+   5. Badge Count
+   ============================================================ */
+.badge-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #f13b63;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 2px solid var(--bg-card);
+  line-height: 1;
+}
+
+/* ============================================================
+   6. Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .search-box-group {
+    max-width: 100%;
+  }
+  .payment-left-section,
+  .payment-right-section {
+    min-height: auto;
+    padding: 2rem 1.2rem;
+  }
+}
+.payment-right-section {
+  background-color: var(--bg-main);
+  padding: 2rem 2.5rem; /* تقليل الـ padding العلوي */
+  min-height: auto; /* إزالة min-height الكبير */
+}
+
+/* تحسين مظهر الصفحة على الموبايل */
+@media (max-width: 768px) {
+  .payment-left-section,
+  .payment-right-section {
+    padding: 1.5rem 1rem;
+  }
+}/* ============ Payment Page Layout ============ */
+.payment-left-section {
+  background:
+    linear-gradient(rgba(40, 20, 20, 0.88), rgba(40, 20, 20, 0.92)),
+    url('../../assets/image/Rectangle(1).png') center/cover no-repeat;
+  color: #ffffff;
+  padding: 3rem 2.5rem;
+  min-height: calc(100vh - 130px);
+}
+
+.payment-right-section {
+  background-color: var(--bg-main);
+  padding: 2rem 2.5rem;
+  min-height: calc(100vh - 130px);
+  overflow-y: auto;
+}
+
+/* ✅ تحسين عرض المنتجات في الملخص */
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 4px;
+}
+
+/* ✅ تحسين الاستجابة للموبايل */
+@media (max-width: 768px) {
+  .payment-left-section,
+  .payment-right-section {
+    min-height: auto;
+    padding: 1.5rem 1rem;
+  }
+}

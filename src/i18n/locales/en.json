@@ -1,0 +1,60 @@
+{
+  "navbar": {
+    "allCategory": "All category",
+    "products": "Products",
+    "hotOffers": "Hot offers",
+    "giftBoxes": "Gift boxes",
+    "aboutUs": "About Us",
+    "help": "Help",
+    "helpCenter": "Help Center",
+    "shipping": "Shipping & Delivery",
+    "returns": "Returns & Refunds",
+    "profile": "Profile",
+    "message": "Message",
+    "orders": "Orders",
+    "myCart": "My cart",
+    "search": "Search",
+    "searchPlaceholder": "Search",
+    "allCategoryOption": "All category"
+  },
+  "home": {
+    "latestTrending": "Latest trending",
+    "electronicItems": "Electronic items",
+    "learnMore": "Learn more",
+    "hiUser": "Hi, user",
+    "letsGetStarted": "let's get started",
+    "joinNow": "Join now",
+    "logIn": "Log in",
+    "promoOrange": "Get US $10 off with a new supplier",
+    "promoPink": "Send quotes with supplier preferences"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "backToShop": "Back to shop",
+    "remove": "Remove",
+    "saveForLater": "Save for later",
+    "moveToCart": "Move to cart",
+    "checkout": "Checkout",
+    "removeAll": "Remove all",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "tax": "Tax",
+    "total": "Total",
+    "apply": "Apply",
+    "haveCoupon": "Have a coupon?",
+    "addCoupon": "Add coupon",
+    "yourShoppingBag": "Your Shopping Bag",
+    "emptyCart": "Your cart is empty",
+    "savedForLater": "Saved for later",
+    "send": "Send",
+    "subscribe": "Subscribe",
+    "subscribeTitle": "Subscribe on our newsletter",
+    "subscribeText": "Get daily news on upcoming offers from many suppliers all over the world",
+    "email": "Email",
+    "language": "Language"
+  }
+  
+  
+}
+
