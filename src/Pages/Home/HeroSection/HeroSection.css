@@ -50,7 +50,7 @@
 .hero-main-banner {
   flex: 1;
   background-color: #a0e0d1;
-  background-image: url('src/assets/image/Banner-board-800x420 2.png');
+  background-image:  url("/src/assets/image/Banner-board-800x420 2.png");
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
